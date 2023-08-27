@@ -1,4 +1,3 @@
-# 
 # Build multiple files
 ## Using g++ without link
 If you have your two source files, you can compile them into object files without linking, as so:
@@ -17,3 +16,5 @@ Create a make file and
 pi@raspberrypi:~/CppLessons/Session1_Basic/Lesson1/3_Function $ make main
 g++ -Wall -g -c sample.cc
 g++ -Wall -g -o main main.o sample.o
+
+# Functions
