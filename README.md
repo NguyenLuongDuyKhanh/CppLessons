@@ -3,20 +3,10 @@
     move-semantics https://stackoverflow.com/questions/3106110/what-is-move-semantics
     overload and over ride
     rule of three
-
+    <vector>
+    <string>
 # Cpp
-## Primitive types
-Void 
-    Specially use with pointer and function
 
-Arithmetic 
-    Integral: bool, char, short, int 
-    Floating point: float, double
-    Modifiers: signed, unsigned, short, long
-    Qualifiers: const, volatile, static
-
-Variable
-    Should be initialized during declaration to avoid bugs
 
 ## GDB
 The GNU Debugger (GDB) is a portable debugger that runs on many Unix-like systems and works for many programming languages, including Ada, Assembly, C, C++, D, Fortran, Go, Objective-C, OpenCL C, Modula-2, Pascal, Rust,[2] and partially others.[3]
