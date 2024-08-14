@@ -1,0 +1,59 @@
+
+
+Using && (double ampersand) to run commands simultaneously
+In case if you want that the second job/command needs to wait for the first job/command to finish, use the && between the commands. So in that way if any error occurs while the sentence is being executed it will stop.
+
+```
+    command1 && command2
+    command1; command2
+```
+
+The ; token just separates commands, so it will run the second command regardless of whether or not the first one succeeds.
+
+# Compiler
+    gcc - GNU Compiler Collections - use to compile C program
+    g++ - Use to compile C++ program, but also C program
+    cc - is an environment variable referring to the system's C compiler. On linux platforms, CC almost always points to /usr/bin/gcc.
+
+        pi@raspberrypi:~/workspace $ type -a gcc
+        gcc is /usr/bin/gcc
+        gcc is /bin/gcc
+        pi@raspberrypi:~/workspace $ type -a g++
+        g++ is /usr/bin/g++
+        g++ is /bin/g++
+
+        pi@raspberrypi:~/workspace $ which cc
+        /usr/bin/cc
+        pi@raspberrypi:~/workspace $ type -a cc
+        cc is /usr/bin/cc
+        cc is /bin/cc
+        pi@raspberrypi:~/workspace $ ls -lha /usr/bin/cc
+        lrwxrwxrwx 1 root root 20 May  3  2023 /usr/bin/cc -> /etc/alternatives/cc
+        pi@raspberrypi:~/workspace $ ls -lha 
+        pi@raspberrypi:~/workspace $ ls -lha /etc/alternatives/cc
+        lrwxrwxrwx 1 root root 12 May  3  2023 /etc/alternatives/cc -> /usr/bin/gcc
+        
+    Explanation:
+        /bin directory contains all programs that are used by system admin and all others users. /bin directory we can access whenever we want
+        /usr/bin is accessible only for users that are locally logged.
+# Debugger
+
+# Build multiple files
+
+## Using g++ without link
+If you have your two source files, you can compile them into object files without linking, as so:
+
+gcc main.c -o main.o -c
+gcc module.c -o module.o -c
+where the -c flag tells the compiler to stop after the compilation phase, without linking. Then, you can link your two object files as so:
+
+gcc -o myprog main.o module.o
+This is all perfectly normal behavior, you'll usually get your makefile to compile things separately and link them at the end, so you don't have to recompile every single source file every time you change one of them.
+
+Talking about main.o "calling functions in" module.o is perfectly fine, but an .o file is not a source file, it's a compiled object file. If "put my source code in files with extension .o" actually meant "compile my source code into files with extension .o" then the situation would make a whole lot more sense.
+
+## Using make file
+Create a make file and 
+pi@raspberrypi:~/CppLessons/Session1_Basic/Lesson1/3_Function $ make main
+g++ -Wall -g -c sample.cc
+g++ -Wall -g -o main main.o sample.o

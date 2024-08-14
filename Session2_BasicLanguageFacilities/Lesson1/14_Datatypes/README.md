@@ -12,3 +12,4 @@ Arithmetic
 
 Variable
     Should be initialized during declaration to avoid bugs
+

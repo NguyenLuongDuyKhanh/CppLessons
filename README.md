@@ -2,7 +2,7 @@
 # TODO
     move-semantics https://stackoverflow.com/questions/3106110/what-is-move-semantics
     overload and over ride
-    rule of three
+    
     <vector>
     <string>
 # Cpp
@@ -22,6 +22,10 @@ https://onlineclassnotes.com/what-are-steps-followed-by-cpu-to-execute-an-instru
 
 ## Build steps
 https://faculty.cs.niu.edu/~mcmahon/CS241/Notes/build.html
+What difference between binary and object output of a C++ file
 
 # Linux
 Inhibit
+
+# Keywords and identifiers 
+https://en.cppreference.com/w/cpp/keyword
