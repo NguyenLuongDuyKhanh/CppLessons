@@ -29,3 +29,5 @@ Inhibit
 
 # Keywords and identifiers 
 https://en.cppreference.com/w/cpp/keyword
+
+[cv (const and volatile) type qualifiers](https://en.cppreference.com/w/cpp/language/cv)

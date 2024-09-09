@@ -27,4 +27,41 @@ int main()
     cout << "Size of arr5 after initializing"<<sizeof(arr1);
     
     return 0;
- }
+}
+/*
+    The output on raspberry pi
+pi@raspberrypi:~/workspace/CppLessons/Session2_BasicLanguageFacilities/Lesson1/14_Datatypes/Datatype $ ~/bin/main.o 
+Computing the size of some C++ inbuilt variable types
+Size of bool: 1
+Size of char: 1
+Size of unsigned short int: 2
+Size of short int: 2
+Size of unsigned long int: 4
+Size of long: 4
+Size of int: 4
+Size of unsigned long long: 8
+Size of long long: 8
+Size of unsigned int: 4
+Size of float: 4
+Size of double: 8
+The output changes with compiler, hardware and OS
+0Type of arr5 before initializing20Size of arr5 after initializing20
+
+    The output on wsl
+(base) khanh@DESKTOP-C4P51A8:~$ ./test.o 
+Computing the size of some C++ inbuilt variable types
+Size of bool: 1
+Size of char: 1
+Size of unsigned short int: 2
+Size of short int: 2
+Size of unsigned long int: 8
+Size of long: 8
+Size of int: 4
+Size of unsigned long long: 8
+Size of long long: 8
+Size of unsigned int: 4
+Size of float: 4
+Size of double: 8
+The output changes with compiler, hardware and OS
+
+*/
