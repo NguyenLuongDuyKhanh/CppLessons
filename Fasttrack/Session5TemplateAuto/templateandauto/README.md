@@ -1,0 +1,1 @@
+The idea is simple, source code contains only function/class, but compiled code may contain multiple copies of the same function/class. 

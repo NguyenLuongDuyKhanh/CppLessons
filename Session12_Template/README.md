@@ -6,6 +6,9 @@ Templates do not follow definition and declaration convention -> can be defined 
 Template Argument deduction -> The process of deducting types
 Template Instansiation - The process of generating function variants
 
-
+# TODO
 Explicit instantiation
 Explicit specialization
+
+## References
+https://www.geeksforgeeks.org/templates-cpp/

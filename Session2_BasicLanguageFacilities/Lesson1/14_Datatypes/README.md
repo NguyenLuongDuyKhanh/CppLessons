@@ -13,3 +13,9 @@ Arithmetic
 Variable
     Should be initialized during declaration to avoid bugs
 
+# optional exact-width types stdint.h 
+uint8_t
+int8_t
+...
+They are called exact-width type used in embedded programming.
+It helps to maintain the size of a variable when we switch that peice of code to a different system

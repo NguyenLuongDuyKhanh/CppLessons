@@ -5,12 +5,13 @@ using namespace std;
 typedef int mytype;
 // One function works for all data types.  This would work
 // even for user defined types if operator '>' is overloaded
-template <typename T> T myMax(T x, T y)
+template <typename T> T 
+myMax(T x, T y)
 {
     return (x > y) ? x : y;
 }
  
-template <typename T, class X> // class or typename don't matter here
+template <typename T, class X> // class or typename doesn't matter here
 void Swap(T &a, X &b) {
     T temp = a;
     a = (T)b;

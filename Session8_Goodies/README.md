@@ -57,6 +57,6 @@ std::none_of
 std::nothrow
 std::unique_lock<std::mutex> lk(_mut);
 std:: 
-
+https://www.geeksforgeeks.org/how-to-reverse-a-vector-using-stl-in-c/
 https://www.geeksforgeeks.org/tuples-in-c/
 https://en.cppreference.com/w/cpp/container
