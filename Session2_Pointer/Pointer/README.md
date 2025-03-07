@@ -14,3 +14,6 @@ To access the value at the address
 Always needs an initializer   Could be nullptr if not initialize yet
 Bound to it referent   Can point to other variables
 No storage required
+
+## Dangling Pointers
+is a pointer that has been freed
