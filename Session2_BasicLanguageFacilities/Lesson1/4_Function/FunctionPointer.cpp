@@ -14,12 +14,17 @@ void samplePointerFunction() {
     cout << "Some feature in samplePointerFunction" << endl;
 }
 
-void someActions(void (*callback)())
+template <typename T> // To accept both void and int function pointer
+void someActions(T callback)
 {
-    cout << "The value of the product is: " << endl;
+    cout << "The value of the product is: ";
     callback();
 }
 
+int sampleIntFunction() {
+    cout << "This function return a integer" << endl;
+    return 0;
+}
 int main() {
 
     // 1 1
@@ -44,5 +49,10 @@ int main() {
     void (*funcPointer)();
     funcPointer = sampleFunction2;
     someActions((funcPointer));
+
+    // Pointer function must in the same type of the function it points to
+    int (*intfuncPointer)();
+    intfuncPointer = &sampleIntFunction; // Assign the address
+    someActions((intfuncPointer));
     return 0;
 }

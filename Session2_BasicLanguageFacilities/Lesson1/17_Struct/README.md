@@ -1,3 +1,4 @@
+Struct in c cannot contain functions.
 In c++ struct and c++ class have only one difference by default struct members are public and class members are private.
 
 ## References

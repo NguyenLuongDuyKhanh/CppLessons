@@ -19,7 +19,7 @@ int main() {
     try {
         ProcessRecords(std::numeric_limits<int>::max());
     } catch (runtime_error &ex) {
-        cout << ex.what() << endl;
+        cout << "Exception was catched: " <<ex.what() << endl;
     }
     return 0;
 }

@@ -1,0 +1,5 @@
+struct hello {
+    int functiona() {
+        
+    }
+};
