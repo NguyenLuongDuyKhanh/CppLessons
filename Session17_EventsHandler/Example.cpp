@@ -1,9 +1,12 @@
+/*
 Your personal and company data are protected in this chat
 
 Certainly! In C++, events are often implemented using the Observer design pattern, which allows an object (the subject) to notify other objects (observers) about changes in its state. Here's a simple example to illustrate how you can create and use events in C++:
 
 Example: Event System in C++
 Step 1: Define the Event and Observer Interfaces
+*/
+
 #include <iostream>
 #include <vector>
 #include <functional>

@@ -57,3 +57,24 @@ Create a make file and
 pi@raspberrypi:~/CppLessons/Session1_Basic/Lesson1/3_Function $ make main
 g++ -Wall -g -c sample.cc
 g++ -Wall -g -o main main.o sample.o
+
+# In all the examples so far, we’ve called gcc on a single source file and
+it has created a single executable program. This hides the fact that gcc
+actually does two things: first, it compiles your C source file into what’s
+called an object file, and then it links the object file with all the library
+functions to create the executable. This second step is performed by a
+program called a linker; gcc actually does both jobs.
+If you create a program with multiple source files, you just need to
+include the names of all the source files in the call to gcc. It will then
+create one object file for each source file, and then link all your object
+files together to create the executable.
+There’s one snag, though. If you’ve separated your code into separate
+files (usually referred to as modules), you’ll have some files which
+make calls to functions in other files in order to work. These files don’t
+find out about each other until the linker operates on them; the files
+are compiled individually, and the compiler will complain if you use
+functions in a file it doesn’t know about.
+
+# Linker
+## Dinamic link and static link
+https://mayowaobisesan.medium.com/c-linker-9b005f0a86f2
