@@ -46,9 +46,35 @@ see valgrindOutput for an example output of the command
     valgrind --tool=memcheck --leak-check=yes --show-reachable=yes --num-callers=20 --track-fds=yes ./a.out
 """
 
+# Debug
+A core dump is a file that captures the memory of a running process at a specific point in time, typically when the process crashes. The @ symbol in the context of a core dump might refer to a specific memory address, a marker, or a shorthand used in debugging tools or logs. Here's a brief explanation of how it might relate:
+
+Memory Address:
+The @ symbol could indicate a memory address where an error occurred. For example, a segmentation fault might show something like:
+
+Segmentation fault at address @0x7ffdf1234abc
+
+
+This helps developers locate the problematic memory region.
+
+Debugging Context:
+In debugging tools like gdb, @ might be used to specify a location or context. For instance, it could represent a specific instruction pointer or a variable's memory location.
+
+Symbolic Representation:
+Some tools or logs use @ to denote a function or file where the crash occurred, e.g.:
+
+Crash in function foo() @ file.c:42
+
+
+If you're encountering this in a specific tool or log, it would be helpful to refer to the documentation of that tool for precise usage. Let me know if you'd like more tailored guidance!
+
+
 
 ## Recover strategies
 
 # References
 https://www.geeksforgeeks.org/reasons-c-program-crash/
 https://www.tutorialspoint.com/reasons-for-a-cplusplus-program-crash
+
+# TODO
+- investigate more

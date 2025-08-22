@@ -60,3 +60,11 @@ std::
 https://www.geeksforgeeks.org/how-to-reverse-a-vector-using-stl-in-c/
 https://www.geeksforgeeks.org/tuples-in-c/
 https://en.cppreference.com/w/cpp/container
+
+
+# std:function
+# std::function
+https://stackoverflow.com/questions/11018300/function-is-not-an-element-of-std
+std::function is use to define a lambda function
+https://www.geeksforgeeks.org/cpp/std-function-in-cpp/
+can we assign a lambda to nullptr

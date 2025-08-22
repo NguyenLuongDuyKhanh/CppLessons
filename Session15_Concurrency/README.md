@@ -48,3 +48,7 @@ Use CustomString to examine and see:
 - Compare to contex manager in python, std::lock_guard ensure the lock will be released eventually even if encouter exception/return while acquring lock
 
 ## High level (task-based) concurrency
+
+
+# TODO
+https://www.geeksforgeeks.org/how-to-detach-a-thread-in-cpp/

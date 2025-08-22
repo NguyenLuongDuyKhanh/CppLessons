@@ -1,0 +1,2 @@
+https://codingtechroom.com/question/understanding-compile-time-constants-in-int-enum-patterns#:~:text=In%20programming%20languages%20that%20support%20enums,%20such%20as,compilation%20of%20the%20code%20rather%20than%20at%20runtime.
+https://stackoverflow.com/questions/33232075/is-it-reasonable-to-use-enums-instead-of-defines-for-compile-time-constants-in

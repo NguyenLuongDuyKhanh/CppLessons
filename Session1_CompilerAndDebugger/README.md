@@ -78,3 +78,13 @@ functions in a file it doesn’t know about.
 # Linker
 ## Dinamic link and static link
 https://mayowaobisesan.medium.com/c-linker-9b005f0a86f2
+Các kiểu link
+Dynamic
+Static
+Classpath
+Notlinked
+
+# TODO
+write a library without main function
+Check lại xem header lib như boost có lợi gì
+Debug khi không có file source, file source ở chỗ khác hoặc debg trong lib thì làm sao 

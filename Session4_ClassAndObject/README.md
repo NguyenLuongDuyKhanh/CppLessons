@@ -8,3 +8,4 @@ If default constructor is not defined in the source code by the programmer, then
 ## References 
 https://www.geeksforgeeks.org/default-constructors-in-cpp/
 https://www.geeksforgeeks.org/static-member-function-in-cpp/
+Nếu pass bằng giá trị thì có gọi copy constructor không?
