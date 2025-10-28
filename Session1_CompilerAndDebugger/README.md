@@ -10,6 +10,9 @@ In case if you want that the second job/command needs to wait for the first job/
 
 The ; token just separates commands, so it will run the second command regardless of whether or not the first one succeeds.
 
+# Programming style
+- Generic programming: algorithms and functions are written in terms of types that can be specified later, allowing code to be reused for different data types without modification. Generics allow you to create classes, interfaces, or methods that are parameterized by the type of data they will operate on. For example, a Box class could be generic with respect to its type, so it can hold a String or an Integer.
+- 
 # Compiler
     gcc - GNU Compiler Collections - use to compile C program
     g++ - Use to compile C++ program, but also C program

@@ -49,6 +49,11 @@ Use CustomString to examine and see:
 
 ## High level (task-based) concurrency
 
+## The use of Atomic action
+
 
 # TODO
 https://www.geeksforgeeks.org/how-to-detach-a-thread-in-cpp/
+https://www.kernel.org/doc/html/v4.19/trace/events.html
+https://linux.die.net/man/3/event
+https://manpages.debian.org/bookworm/manpages-dev/signal.2.en.html

@@ -30,3 +30,9 @@
 *.exe
 *.out
 *.app
+
+# Bazel playground
+Session1_CompilerAndDebugger/ToolChains/Bazel/
+
+# Yocto playground
+Session1_CompilerAndDebugger/ToolChains/Yocto/
