@@ -91,3 +91,9 @@ Notlinked
 write a library without main function
 Check lại xem header lib như boost có lợi gì
 Debug khi không có file source, file source ở chỗ khác hoặc debg trong lib thì làm sao 
+
+Use gdb advanced:
+    Use gdb in a running program
+    Use gdb in a linux kernel
+
+Autotool, autoconfig
