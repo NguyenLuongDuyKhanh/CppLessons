@@ -7,13 +7,13 @@ int main(){
     int a1;                         //Uninitialized
     a1 = 10;                        //Initialized
     int a2 = 0;                     //Initialized
-    int a3(5);                      //Direct initialization
+    int a3(5);                      //Direct initialization (Parenthesis initialize)
 
-    std::string s1;                 //Default constructor of string was involked so it is automaticly initialized
-    std::string s2("Somethings");   //Direct initialization
+    std::string s1;                 //Default constructor of string was involked so it is automaticaly initialized
+    std::string s2("Somethings");   //Direct initialization (Parenthesis initialize) - call constructor
 
     char d1[8];                     //Uninitialize
-    std::cout<<sizeof(d1)<<std::endl;          //Initialized
+    std::cout<<sizeof(d1)<<std::endl; 
     char d2[8] = {"a"};             //Aggregate initialization
     std::cout<<sizeof(d2)<<std::endl;          
 
@@ -35,7 +35,7 @@ int main(){
 
     // Narrowing conversion => investigate casting
     // float f{};
-    // int i{f};
+    // int i{1.5}; // This line raise an error because uniform initializer prevent narrow down conversion
 
     // int i{};
     // float f{i};

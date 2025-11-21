@@ -205,3 +205,141 @@ You → syscall clone → Kernel thread
 ---
 
 Would you like me to show **what the compiled binary’s system calls look like** using `strace` or `objdump -d` so you can *see the syscall instruction sequence in the actual ELF*?
+
+
+Good question — a **system call (syscall)** in assembly is the lowest-level way a program requests a service from the **kernel** (like reading a file, printing to screen, allocating memory, etc.).
+
+How it *looks* depends on the **CPU architecture** and **operating system**. Let’s go over the most common case — **Linux on x86-64** — and then I’ll briefly mention others.
+
+---
+
+## 🧩 1. On Linux x86-64
+
+### Example: `write(1, "Hi\n", 3)`
+
+This C code:
+
+```c
+write(1, "Hi\n", 3);
+```
+
+In x86-64 **assembly (AT&T syntax)**, looks like:
+
+```asm
+    mov $1, %rax        # syscall number for write()
+    mov $1, %rdi        # file descriptor (stdout)
+    lea message(%rip), %rsi  # pointer to buffer
+    mov $3, %rdx        # length
+    syscall             # make the system call
+
+message:
+    .ascii "Hi\n"
+```
+
+### Explanation:
+
+| Register  | Purpose        | Value here      |
+| --------- | -------------- | --------------- |
+| `rax`     | syscall number | 1 (`write`)     |
+| `rdi`     | arg1           | file descriptor |
+| `rsi`     | arg2           | pointer to data |
+| `rdx`     | arg3           | length          |
+| `syscall` | instruction    | traps to kernel |
+
+---
+
+## 🧮 2. Syscall Table Reference
+
+In Linux, syscall numbers are defined in:
+
+```
+/usr/include/asm/unistd_64.h
+```
+
+For example:
+
+```c
+#define __NR_write 1
+#define __NR_read  0
+#define __NR_exit  60
+```
+
+---
+
+## 🧠 3. Return Value
+
+After the `syscall`, the kernel returns a value in `RAX`.
+If it’s **negative**, it represents an **error number** (e.g. `-EFAULT`, `-EPERM`, etc.).
+
+Example:
+
+```asm
+    syscall
+    cmp $0, %rax
+    js error_handler   # jump if negative
+```
+
+---
+
+## 🏗️ 4. On 32-bit x86 (for comparison)
+
+32-bit Linux uses `int 0x80` instead of `syscall`:
+
+```asm
+    movl $4, %eax        # syscall number for write()
+    movl $1, %ebx        # fd = 1 (stdout)
+    movl $message, %ecx  # pointer
+    movl $3, %edx        # length
+    int $0x80            # interrupt to kernel
+
+message:
+    .ascii "Hi\n"
+```
+
+Registers change as well:
+
+| Register | Purpose        |
+| -------- | -------------- |
+| EAX      | syscall number |
+| EBX      | arg1           |
+| ECX      | arg2           |
+| EDX      | arg3           |
+
+---
+
+## ⚙️ 5. On Other Architectures
+
+| Arch         | Instruction | Example Syscall No. Source     |
+| ------------ | ----------- | ------------------------------ |
+| x86-64       | `syscall`   | `/usr/include/asm/unistd_64.h` |
+| x86 (32-bit) | `int 0x80`  | `/usr/include/asm/unistd_32.h` |
+| ARM (32-bit) | `svc 0`     | `/usr/include/asm/unistd.h`    |
+| AArch64      | `svc #0`    | `/usr/include/asm/unistd.h`    |
+| RISC-V       | `ecall`     | `/usr/include/asm/unistd.h`    |
+
+---
+
+## 🧩 6. Example: Exit system call
+
+Simplest syscall to exit with code 0:
+
+**x86-64:**
+
+```asm
+    mov $60, %rax     # syscall: exit
+    xor %rdi, %rdi    # status = 0
+    syscall
+```
+
+**x86 (32-bit):**
+
+```asm
+    mov $1, %eax      # syscall: exit
+    xor %ebx, %ebx    # status = 0
+    int $0x80
+```
+
+---
+
+Would you like me to show how a **C program** makes a syscall directly in inline assembly (without libc)? That’s a neat way to see the bridge between C and the assembly syscall form.
+

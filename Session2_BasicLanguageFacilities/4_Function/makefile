@@ -14,8 +14,8 @@ main: main.o sample.o
  
 # The main.o target can be written more simply
  
-main.o: main.cpp sample.hpp 
-	$(CC) $(CFLAGS) -c main.cpp
+main.o: Ex1_SampleFunctionMain.cpp Ex1_SampleFunction.hpp 
+	$(CC) $(CFLAGS) -c Ex1_SampleFunctionMain.cpp
 
-sample.o: sample.hpp
-	$(CC) $(CFLAGS) -c sample.cc
+sample.o: Ex1_SampleFunction.hpp
+	$(CC) $(CFLAGS) -c Ex1_SampleFunction.cc

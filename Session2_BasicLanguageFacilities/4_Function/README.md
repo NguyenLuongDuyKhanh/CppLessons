@@ -1,3 +1,8 @@
+
+## Functions
+- Functions' body enclosed within {}.
+- Variables introduced inside the funtion's body is invalid outside function body.
+
 ## Default parameters
 Aka optional parameters
 

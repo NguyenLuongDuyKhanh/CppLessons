@@ -108,3 +108,15 @@ what advantage of using namespace. Teach me best practice to use namespace vs cl
 
 ## Study 35
 what difference between NUL and nullptr. Examine a NULL and nullptr in stack trace, its type and its address
+
+## Study 36
+What is the best practice to separate source files (.cpp) and header files (.h) in C++. Which part of code should live in on which files? Any problem if I write the hold implementation in header file?
+
+## Study 37
+Hhow 'flush' work in c++, what is buffer, how buffer work, how often does flush perform, how to check.
+
+## Study 38
+What is MinGW, MSVC, LLVM, GNU compiler.
+ 
+## Study 39
+Runtime polymorphism and compile time polymorphism in C/C++

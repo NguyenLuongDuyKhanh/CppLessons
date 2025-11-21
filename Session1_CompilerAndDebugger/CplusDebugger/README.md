@@ -1,3 +1,9 @@
+## Study 1
+gdb to run untill a condition happen. what to do if seg fault happen during gdb section
+
+## Study 2
+How to create memory dump file in Linux.
+
 ## TODO:
     Run gdb with other language
     Run gdb with parameter

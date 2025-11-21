@@ -1,0 +1,11 @@
+Polymorphism, in the context of C, refers to the ability to provide a single interface to entities of different types, allowing them to be treated uniformly while exhibiting different behaviors. While C is not an object-oriented language and does not natively support features like virtual functions or class inheritance found in C++, polymorphism can be implemented using specific design patterns.
+
+## Implementing Polymorphism in C:
+- Function Pointers: This is a common and fundamental method. You can define a struct that contains a member which is a pointer to a function. Different types of objects can then have their specific functions assigned to this pointer, allowing a single function call through the pointer to invoke different implementations based on the object's type.
+- Structures with Common Headers: Embed a "base" structure within different "derived" structures. This allows you to cast a pointer to a derived structure to a pointer to the base structure, provided the base structure is the first member of the derived structures. You can then access common fields or function pointers defined in the base structure.
+- Union Types (Less Common for Behavioral Polymorphism): While unions allow different data types to occupy the same memory location, they are typically used for data polymorphism rather than behavioral polymorphism. You can use a union with an associated enum to keep track of the active member, allowing you to interpret the data differently based on its type.
+
+## Key Concepts in C Polymorphism:
+- Runtime Polymorphism: Achieved through function pointers, where the specific function to be called is determined at runtime based on the object's type or state.
+- Subtyping Polymorphism: Implemented by embedding a "supertype" struct within a "subtype" struct, allowing a pointer to the subtype to be treated as a pointer to the supertype.
+- Polymorphism in C requires manual implementation and careful design, as the language does not provide built-in mechanisms like virtual functions. However, by using techniques like function pointers and structured data, you can achieve powerful and flexible polymorphic behavior.

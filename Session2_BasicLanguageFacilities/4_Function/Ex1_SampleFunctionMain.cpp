@@ -1,5 +1,5 @@
 #include <iostream>
-#include "sample.hpp"
+#include "Ex1_SampleFunction.hpp"
 
 using namespace std;
 
