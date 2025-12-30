@@ -27,5 +27,16 @@ Dereference not required        Requires dereference operator to access the valu
 ## Dangling Pointers
 - Is a pointer points to memory which has been freed.
 - Best practice is to assign it to null after deallocating.
-- 
+
+## Best practice
+In C
+- Always use pointers for output parameters
+- Arrays → pointers
+- Dynamic memory → pointer to pointer
+
+In C++
+- Input only → pass by value or const&
+- Output / modify → pass by reference
+- Raw pointers → only when necessary (low-level / C APIs)
+
 ## Example swap function

@@ -274,3 +274,196 @@ I can show:
 ✔ A minimal custom allocator implementation
 
 Just tell me if you'd like the **full deep dive**.
+
+Great question — this is one of those “looks simple, but bites people later” C topics 😄
+Let’s frame it around **intent**, not just function names.
+
+---
+
+## First: what each one is *for*
+
+### `malloc(size)`
+
+* Allocates **uninitialized** memory
+* Fast
+* Contents = garbage
+
+Use when:
+
+* You’ll **immediately overwrite** all bytes
+* Performance matters
+
+---
+
+### `calloc(n, size)`
+
+* Allocates **zero-initialized** memory
+* Slower than `malloc` (has to clear memory)
+
+Use when:
+
+* You **need zeroes** (arrays, structs with counters/flags)
+* Zero is a meaningful default value
+
+---
+
+### `realloc(ptr, new_size)`
+
+* **Resizes an existing allocation**
+* May:
+
+  * Grow/shrink in place
+  * Or allocate new memory + copy + free old
+
+Use when:
+
+* You already have allocated memory
+* And you need **more or less of it**
+
+---
+
+## 🔑 The rule of thumb
+
+> **Use `realloc` only when you already own a valid allocation and want to change its size.**
+
+Never use `realloc` as a first allocation.
+
+---
+
+## When you SHOULD use `realloc`
+
+### 1️⃣ Growing a dynamic array
+
+Classic example:
+
+```c
+int *arr = malloc(4 * sizeof *arr);
+size_t capacity = 4;
+size_t count = 0;
+
+if (count == capacity) {
+    capacity *= 2;
+    int *tmp = realloc(arr, capacity * sizeof *arr);
+    if (!tmp) {
+        // handle OOM
+        free(arr);
+        return;
+    }
+    arr = tmp;
+}
+```
+
+Why `realloc`?
+
+* Preserves existing data
+* Avoids manual `malloc + memcpy + free`
+
+---
+
+### 2️⃣ Shrinking memory to save space
+
+```c
+arr = realloc(arr, count * sizeof *arr);
+```
+
+Useful after reading unknown-size input.
+
+---
+
+### 3️⃣ Reusing buffers
+
+For things like:
+
+* Reading files of unknown size
+* Parsing streams
+* Building strings incrementally
+
+---
+
+## When you should NOT use `realloc`
+
+### ❌ Initial allocation
+
+```c
+int *p = realloc(NULL, n * sizeof *p); // legal, but misleading
+```
+
+Yes, this works — but it’s **bad style**.
+Use `malloc` or `calloc` so intent is clear.
+
+---
+
+### ❌ When you need zeroed memory
+
+```c
+realloc(ptr, new_size); // new bytes are UNINITIALIZED
+```
+
+If you need zeroed memory:
+
+* Use `calloc`
+* Or manually `memset` the new portion
+
+---
+
+### ❌ On memory you don’t own
+
+Never `realloc`:
+
+* Stack memory
+* Static arrays
+* Memory from another allocator
+
+---
+
+## ⚠️ The #1 realloc pitfall
+
+### Losing your pointer on failure
+
+```c
+arr = realloc(arr, new_size); // ❌ dangerous
+```
+
+If `realloc` fails → returns `NULL` → **memory leak**
+
+✅ Correct pattern:
+
+```c
+int *tmp = realloc(arr, new_size);
+if (!tmp) {
+    // handle error, arr still valid
+} else {
+    arr = tmp;
+}
+```
+
+---
+
+## malloc vs calloc vs realloc (decision table)
+
+| Situation                     | Use                 |
+| ----------------------------- | ------------------- |
+| First allocation              | `malloc` / `calloc` |
+| Need zero-initialized memory  | `calloc`            |
+| Resize existing block         | `realloc`           |
+| Growing/shrinking array       | `realloc`           |
+| Overwriting everything anyway | `malloc`            |
+| Need preserved data           | `realloc`           |
+
+---
+
+## 🧠 Mental model
+
+* `malloc` → “Give me memory”
+* `calloc` → “Give me clean memory”
+* `realloc` → “Change the size, keep what I already have”
+
+---
+
+If you want, I can show:
+
+* a **safe dynamic array implementation**
+* how `realloc` behaves under the hood
+* or common real-world bugs caused by `realloc`
+
+Just say the word 👍

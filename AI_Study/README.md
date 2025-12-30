@@ -61,7 +61,7 @@ What is 'declaration' and 'definition', when an object actually live in the memo
 Teach me the constructors/destructors call order in C++ and Python, is it needed to call parent's constructor explicitly to construct parent's attribute? Give me some example to demonstrate.
 
 ## Study 20
-What are difference between malloc/calloc/realloc in C. Show me examples of using them. Show me the internal memory layout (heap & free list) to see how they actually works under the hood?
+What are difference between malloc/calloc/realloc in C. Show me examples of using them. Show me the internal memory layout (heap & free list) to see how they actually works under the hood? When should we use realloc rather than calloc or malloc.
 
 ## Study 21
 Explain "memory leak" and how to detect them. How does the OS reclaim all memory when a process terminates? Teach me the termination of a process in linux.
@@ -120,3 +120,6 @@ What is MinGW, MSVC, LLVM, GNU compiler.
  
 ## Study 39
 Runtime polymorphism and compile time polymorphism in C/C++
+
+## Study 40
+What are __for_range, __for_begin, __for_end in a C++ for loop and how to inspect those in gdb.
