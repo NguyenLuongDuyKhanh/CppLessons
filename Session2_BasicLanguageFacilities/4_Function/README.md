@@ -6,7 +6,11 @@
 ## Default parameters
 Aka optional parameters
 
-## Pointer function
+## Pointer to a function. aka function pointer
 It is useful in techniques such as callback functions, event-driven programs, and polymorphism (a concept where a function or operator behaves differently based on the context).
+Note: It look similar with a function return a pointer.
+
+## std::function
+The std::function() in C++ is a function wrapper class which can store and call any function or a callable object.
 
 https://www.geeksforgeeks.org/function-pointer-in-cpp/

@@ -1,0 +1,8 @@
+- gcov - GNU code coverage
+- Analysic tool, clang analyzer
+- LCOV Code Coverage
+- valgrind - Check bằng valgrind xem nếu out mà ko dealocate thì có memleak ko, Check struct aligt bằng valgrind lu
+- Python: cProfile, line_profiler
+- C/C++: perf, valgrind
+- clangtidy/code checker chạy ntn  
+- bashchecker?

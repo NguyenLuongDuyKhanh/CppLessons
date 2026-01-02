@@ -24,6 +24,16 @@ Bound to it referent.           Can point to other variables.
 No storage required.            A memory size of a word to store the pointer.
 Dereference not required        Requires dereference operator to access the value.
 
+## Pointer to a pointer
+(also known as a double pointer)
+    
+The size of a pointer to a pointer, is the same as the size of a normal pointer. 
+This size depends on the machine architecture (e.g., 4 bytes on a 32-bit system and 8 bytes on a 64-bit system).
+Use cases:
+    - Dynamic memory allocation: Managing arrays of pointers.
+    - Passing pointers to functions: Allowing functions to modify the original pointer.
+    - Multidimensional arrays: Representing complex data structures.
+
 ## Dangling Pointers
 - Is a pointer points to memory which has been freed.
 - Best practice is to assign it to null after deallocating.

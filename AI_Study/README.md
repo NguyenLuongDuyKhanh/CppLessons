@@ -123,3 +123,33 @@ Runtime polymorphism and compile time polymorphism in C/C++
 
 ## Study 40
 What are __for_range, __for_begin, __for_end in a C++ for loop and how to inspect those in gdb.
+
+## Study 41
+Teach me about thread in Linux, tell me the difference from process.
+
+## Study 42
+What is thread detach?
+
+## Study 43
+What are callable in C++?
+
+## Study 44
+Teach me stack unwind in C++
+
+## Study 45
+Teach me some feature in <type_traits> C++, including is_same.
+
+## Study 46
+What is Auto_ptr in C++.
+
+## Study 47
+How preprocessor choose the compiler #ifdef <platform>.
+
+## Study 48
+Teach me about log level and syslog in Linux Cpp.
+
+## Study 49
+Teach me database optimization techniques.
+
+## Study 50
+Show me the implementation of malloc/calloc/realloc in C.
