@@ -1,6 +1,6 @@
 # Python 
     - override decorator python
-    - difference with overwrite
+    - difference with overwrite/overload. override != overload
     - https://www.geeksforgeeks.org/method-overriding-in-python/
     - https://realpython.com/python-operator-module/
     - https://realpython.com/python-asterisk-and-slash-special-parameters/
@@ -19,17 +19,13 @@
     instance and class attribute cungf teen
     - https://stackify.com/python-garbage-collection/
     - dùng https://docs.python.org/3/library/gc.html để check giữa việc tạo object dùng 1 lần và instance thì cái nào okay hơn
-        - tuwf local ipc publisher tạo mới object mà chỉ dùng 1 lần
-    - override != overload
+    - tuwf local ipc publisher tạo mới object mà chỉ dùng 1 lần thi co hai gi cho performance hay khong
     - break a sleep in thread
     - check syntax of python script - The use of py_compile
     - @dataclass in python - @staticmethod
     - @property
     - from collections import ChainMap python
     - https://inquirerpy.readthedocs.io/en/latest/
-
-    https://realpython.com/tic-tac-toe-python/
-    https://realpython.com/tic-tac-toe-ai-python/
     https://realpython.com/queue-in-python/
     
     django
@@ -97,9 +93,6 @@
     - https://gpsd.gitlab.io/gpsd/
     - gpsctl
 
-
-
-    
 # Threading in programming
  thread and daemon and process in pyhon/C++/linux, threading.event python
     - https://superfastpython.com/thread-event-object-in-python/
@@ -176,12 +169,15 @@ tháp ha noi
     - https://en.wikipedia.org/wiki/Maze-solving_algorithm
     - https://gist.github.com/Chuwiey/1e34ed9e65d41b735d8c
 
-graph traversal
+    graph traversal
     https://www.geeksforgeeks.org/dsa/depth-first-search-or-dfs-for-a-graph/
     https://www.geeksforgeeks.org/dsa/breadth-first-search-or-bfs-for-a-graph/
     https://www.geeksforgeeks.org/dsa/depth-first-search-or-dfs-on-directed-graph/
-self balancing binary search trees ?
+    self balancing binary search trees ?
 
+    https://realpython.com/tic-tac-toe-python/
+    https://realpython.com/tic-tac-toe-ai-python/
+    
 # git 
         https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History
         https://viblo.asia/p/cac-cach-xem-lich-su-commit-trong-git-63vKjJjMK2R

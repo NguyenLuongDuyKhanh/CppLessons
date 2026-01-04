@@ -13,9 +13,10 @@ int functionB();
 auto functionC() -> void;
 
 int main() {
-    auto variable(2.5); // have to put inititial value to make auto works
+    auto variable(2.5); // have to put inititial value (aka must have an initializer) to make auto works
     cout << typeid(variable).name() << endl; // d
-    auto var = functionA();
+    static const auto var = functionA();
+
     cout << typeid(var).name() << endl;         // c
     cout << typeid(functionB()).name() << endl; // i
     functionC();
