@@ -4,9 +4,10 @@ int main() {
 
     int i{5};
     std::cout << sizeof(i) << std::endl;
+    
     // Pointer initialized with NULL
     // Then request memory for the variable
-    int *ptr1 = NULL; 
+    int *ptr1 = nullptr; 
     std::cout << sizeof(ptr1) << std::endl;
     std::cout << ptr1 << std::endl; // 0
     ptr1 = new int;   

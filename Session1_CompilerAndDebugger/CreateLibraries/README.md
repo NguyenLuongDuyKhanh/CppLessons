@@ -45,6 +45,27 @@ Purpose: During linking, the object files in the static library are directly cop
 What it is: A shared object (dynamic library) file is a compiled library that can be loaded at runtime.
 Purpose: Unlike static libraries, shared libraries are not copied into the executable. Instead, the program dynamically loads them during execution, reducing the executable size and allowing multiple programs to use the same library.
 
+#include <cstdio>
+#include <stdio.h>
+
+stdio.h: This is the C-style standard input/output library header file. It provides functions for input and output, such as printf, scanf, fgets, and more. It is designed for use in C programs but can also be used in C++ code if included.
+
+cstdio: This is the C++-style standard input/output header. It's essentially the C++ version of stdio.h, but it places all of the functions from stdio.h into the std namespace to fit better with C++'s conventions and avoid polluting the global namespace.
+
+3. Best Practice in C++
+In modern C++ programming, it is considered better practice to use cstdio because it adheres to the C++ standard and helps avoid potential naming conflicts in the global namespace.
+
+However, if you're maintaining older code or working in a mixed C/C++ environment, you might still encounter or use stdio.h.
+
+"""
+#include <cstdio>
+
+int main() {
+    std::printf("Hello, world!\n");
+    return 0;
+}
+"""
+
 # TODO verify:
 - Kiểm tra các thư viện build-in xem là static hay dynamic.
 - test trường hợp include thư viện (kể cả static và dynamic) có file header nhưng không có object xem sao.

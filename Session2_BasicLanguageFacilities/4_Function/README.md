@@ -8,6 +8,7 @@ Aka optional parameters
 
 ## Pointer to a function. aka function pointer
 It is useful in techniques such as callback functions, event-driven programs, and polymorphism (a concept where a function or operator behaves differently based on the context).
+Can be used to call a function event its name is not known.
 Note: It look similar with a function return a pointer.
 
 ## std::function

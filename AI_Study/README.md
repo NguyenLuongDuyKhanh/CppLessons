@@ -153,3 +153,13 @@ Teach me database optimization techniques.
 
 ## Study 50
 Show me the implementation of malloc/calloc/realloc in C.
+
+## Study 51
+Teach me about inline functions:
+    - Compare inline vs macros vs constexpr
+    - Show real assembly differences
+    - Discuss link-time optimization (LTO)
+    - Analyze STL inlining strategies
+
+## Study 52
+What is SRAM and compare to DRAM

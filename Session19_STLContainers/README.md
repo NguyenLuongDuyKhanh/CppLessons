@@ -117,3 +117,12 @@ https://en.cppreference.com/w/cpp/container.html
 https://cplusplus.com/reference/stl/
 https://en.cppreference.com/w/cpp/container.html
 https://www.geeksforgeeks.org/cpp/containers-cpp-stl/
+
+* `vector`, `deque` → **Random access**
+* `list`, `map`, `set` → **Bidirectional**
+* `forward_list` → **Forward**
+
+
+# References
+https://www.geeksforgeeks.org/stack-empty-and-stack-size-in-c-stl/
+https://stackoverflow.com/questions/3899870/how-to-print-a-stack-trace-whenever-a-certain-function-is-called

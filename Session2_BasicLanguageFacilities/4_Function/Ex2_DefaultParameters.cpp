@@ -8,8 +8,10 @@ void myFunction(string country = "Norway") {
 /*  Only the last parameters can have a default value. 
     Hence the first declaration below is valid while the second isn't.
 
-void sampleFunction(int x, int y=10);
-void sampleFunction(int x=10, int y);
+    void sampleFunction(int x, int y=10);
+    void sampleFunction(int x=10, int y);
+    
+    Note: C does not suport default funtion argument.
 */
 
 int main() {
