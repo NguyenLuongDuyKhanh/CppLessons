@@ -192,3 +192,197 @@ If you don't need old value → prefer `++i`.
 * Benchmark comparison using a small test program
 
 Just tell me!
+
+Short answer: **for almost all modern C++ code, there’s no performance difference once optimized**.
+Long answer: the *semantics* differ, which *can* affect generated assembly in some cases—especially for **user-defined types** or **unoptimized builds**.
+
+Let’s break it down cleanly.
+
+---
+
+## 1. Semantic difference (the real root cause)
+
+```cpp
+++i;   // pre-increment
+i++;   // post-increment
+```
+
+### Pre-increment (`++i`)
+
+1. Increment `i`
+2. Yield the **incremented value**
+
+### Post-increment (`i++`)
+
+1. Save the **old value**
+2. Increment `i`
+3. Yield the **old value**
+
+That “save the old value” step is where differences *may* show up.
+
+---
+
+## 2. Assembly for primitive types (int, pointers)
+
+### Example
+
+```cpp
+int f(int i) {
+    return ++i;
+}
+
+int g(int i) {
+    return i++;
+}
+```
+
+### Optimized build (`-O2` or `-O3`)
+
+Both typically compile to **identical assembly**:
+
+```asm
+lea eax, [rdi + 1]
+ret
+```
+
+Why?
+
+* The compiler sees the result is returned
+* It doesn’t need to preserve the “old value” separately
+* It collapses everything into a single instruction
+
+✅ **No performance difference**
+
+---
+
+### Unoptimized build (`-O0`)
+
+You *may* see differences:
+
+**Pre-increment**
+
+```asm
+add DWORD PTR [rbp-4], 1
+mov eax, DWORD PTR [rbp-4]
+```
+
+**Post-increment**
+
+```asm
+mov eax, DWORD PTR [rbp-4]   ; save old value
+add DWORD PTR [rbp-4], 1
+```
+
+Here, `i++` needs an extra move.
+
+⚠️ Still: this only matters in debug builds.
+
+---
+
+## 3. When it DOES matter: user-defined types
+
+This is the classic interview / STL gotcha.
+
+### Example
+
+```cpp
+struct X {
+    X& operator++();    // pre
+    X operator++(int);  // post
+};
+```
+
+Post-increment must:
+
+1. Make a **copy**
+2. Increment original
+3. Return the copy
+
+Typical implementation:
+
+```cpp
+X X::operator++(int) {
+    X tmp = *this;  // copy
+    ++(*this);
+    return tmp;
+}
+```
+
+Pre-increment:
+
+```cpp
+X& X::operator++() {
+    ++value;
+    return *this;
+}
+```
+
+### Assembly impact
+
+* `i++` → copy constructor + destructor
+* `++i` → simple mutation
+
+🚨 **This absolutely affects performance**
+
+---
+
+## 4. Iterators: the famous rule
+
+```cpp
+for (auto it = v.begin(); it != v.end(); ++it) { ... }
+```
+
+Prefer `++it` over `it++` because:
+
+* Iterators are objects, not integers
+* `it++` may create a temporary
+* `++it` does not
+
+Even if your compiler optimizes it today, the rule exists because:
+
+* It’s semantically cheaper
+* It’s universally correct
+* It avoids pessimizing custom iterators
+
+---
+
+## 5. Modern compiler reality
+
+| Case               | Performance difference |
+| ------------------ | ---------------------- |
+| `int`, pointer     | ❌ None (optimized)     |
+| Debug build        | ⚠️ Maybe               |
+| User-defined types | ✅ Yes                  |
+| Iterators          | ✅ Often                |
+| Volatile variables | ⚠️ Possibly            |
+
+---
+
+## 6. Best practice (simple rule)
+
+> **Use pre-increment unless you actually need the old value**
+
+```cpp
+++i;   // preferred
+i++;   // only if you need the previous value
+```
+
+This is:
+
+* Zero-cost for primitives
+* Safer for abstractions
+* Idiomatic C++
+
+---
+
+## 7. Interview one-liner (use this)
+
+> “For primitive types there’s no difference after optimization, but for user-defined types post-increment may require a temporary copy, so pre-increment is preferred.”
+
+If you want, I can:
+
+* Show **real compiler output** (GCC/Clang/MSVC)
+* Compare **iterators vs raw pointers**
+* Explain why `i = i++` is undefined behavior (classic trap)
+
+Just say the word 😄

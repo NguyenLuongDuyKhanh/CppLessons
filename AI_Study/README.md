@@ -163,3 +163,6 @@ Teach me about inline functions:
 
 ## Study 52
 What is SRAM and compare to DRAM
+
+## Study 53
+How stack grow in runtime?

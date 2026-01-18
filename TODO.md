@@ -7,6 +7,11 @@
     - https://realpython.com/python-for-data-analysis/
     - https://realpython.com/python-seaborn/
     - https://realpython.com/python-catch-multiple-exceptions/
+    - https://realpython.com/python3-object-oriented-programming/
+    - https://realpython.com/inheritance-composition-python/
+    - https://realpython.com/how-to-implement-python-stack/
+    - https://realpython.com/pypy-faster-python/
+
     - difference between module and file
     - alembic in database python 
     - python del keyword, tại sao cần, sao chưa bao giờ xài thử
@@ -29,18 +34,9 @@
     https://realpython.com/queue-in-python/
     
     django
-    https://www.youtube.com/watch?v=xSUm6iMtREA
     https://realpython.com/django-flashcards-app/
     https://realpython.com/installable-django-app/
-    
-    Python app 
-    https://www.youtube.com/watch?v=l8Imtec4ReQ
-    https://www.youtube.com/watch?v=qfSJJVjp6BY
 
-    tempfile - use in a Dong's tool
-    https://docs.python.org/3/library/tempfile.html
-    https://www.geeksforgeeks.org/python-tempfile-module/
-    https://www.geeksforgeeks.org/humanize-package-in-python/
 
     os.mkfifo() - fifo and named pipe in linux
     __del__ in python (deconstruct)
@@ -360,21 +356,17 @@ man 2 intro
     https://learngitbranching.js.org/?locale=vi
     https://github.com/ripienaar/free-for-dev
     https://github.com/topics/tower-of-hanoi?l=python
-    https://realpython.com/python3-object-oriented-programming/
-    https://realpython.com/inheritance-composition-python/
-    https://realpython.com/how-to-implement-python-stack/
+
     https://www.geeksforgeeks.org/sudoku-backtracking-7/
     https://www.geeksforgeeks.org/stack-in-python/
     https://www.learnpython.org/
-    https://realpython.com/pypy-faster-python/
+    
     https://stackoverflow.com/questions/2298242/callback-functions-in-c#:~:text=A%20callback%20is%20a%20callable,be%20reused%20with%20different%20callbacks.
-    https://www.youtube.com/watch?v=Iue1QJzQoPg
     https://www.geeksforgeeks.org/synchronization-by-using-semaphore-in-python/
     https://www.codespeedy.com/semaphores-in-cpp/#:~:text=What%20is%20a%20semaphore%3F,used%20to%20access%20common%20resources.
     https://www.modernescpp.com/index.php/semaphores-in-c-20
     https://en.cppreference.com/w/cpp/thread/counting_semaphore
     https://learn.microsoft.com/en-us/cpp/cpp/smart-pointers-modern-cpp?view=msvc-170
-    đặt consrtuctor = delete để implicit hủy, không để compiler tự generate
     https://stackoverflow.com/questions/35160417/threading-queue-working-example
     gdb server
     build c++ source to include by <> or "", build lib .so, .o,
@@ -390,10 +382,6 @@ man 2 intro
         Const casts
         Dynamic casts
         Reinterpret casts
-    https://www.geeksforgeeks.org/use-of-explicit-keyword-in-cpp/
-    https://stackoverflow.com/questions/121162/what-does-the-explicit-keyword-mean
-    https://en.cppreference.com/w/cpp/language/default_arguments
-    https://www.geeksforgeeks.org/default-arguments-c/
     http://www.gotw.ca/gotw/009.htm
     https://en.cppreference.com/w/cpp/language/storage_duration
     https://en.cppreference.com/w/cpp/language/static
@@ -413,11 +401,6 @@ man 2 intro
 
     final in C++ and python giống java
     give me an example that non-POSIX programs cannot run on different systems
-    different between:
-        i++
-        ++i
-        i+=1 
-    in asm
 
     Memory Allocation Strategiess
 Có nhiều chiến lược cấp phát bộ nhớ khác nhau, mỗi cái phù hợp với tình huống khác nhau. First Fit cấp phát block bộ nhớ trống đầu tiên đủ lớn, nhanh nhưng có thể gây fragmentation. Best Fit tìm block nhỏ nhất đủ lớn, giảm lãng phí nhưng chậm hơn. Worst Fit chọn block lớn nhất, hy vọng phần còn lại sau khi cấp phát vẫn đủ lớn để sử dụng cho các yêu cầu khác.
@@ -428,10 +411,6 @@ Có nhiều công cụ để phát hiện memory leak như Valgrind, AddressSani
 
 Union in C++
 
-About default argument in a function:
-- C does not alow
-- C++ allow, but only the arguments in the last ordered
-
 static in C/C++. static in function definition and global/local variable
 
 What this mean
@@ -440,13 +419,12 @@ function to work with string in c/c++
 
 Try to make sudoku game in C++, try to make c++ sudoku solver and call it by python.
 what is glibc? 
-what an atomic action (std::atomic) look like in asm
+
 
 what are obj C code/library
 https://github.com/aras-p/ClangBuildAnalyzer
 https://www.w3schools.com/cpp/cpp_data_structures.asp
 
-https://doc.qt.io/qt-6/get-and-install-qt.html
 https://www.open-std.org/jtc1/sc22/wg14/www/docs/n3096.pdf
 https://www.open-std.org/jtc1/sc22/wg14/
 https://pubs.opengroup.org/onlinepubs/9799919799/basedefs/threads.h.html
@@ -458,54 +436,39 @@ https://www.geeksforgeeks.org/c/size_t-data-type-c-language/
 Unsigned integer data type
 unit test cpp application
 pdb advance
-std::atomic
-https://cplusplus.com/reference/
-https://en.cppreference.com/w/cpp/atomic/atomic.html
+
 https://www.geeksforgeeks.org/cpp/static_cast-in-cpp/
 https://www.tutorialspoint.com/why-use-static-cast-int-x-instead-of-int-x-in-cplusplus
 what is an identifier in c++
-noexcept constructor
 https://stackoverflow.com/questions/103512/why-use-static-casttx-instead-of-tx
-constructor = delete mean
-https://stackoverflow.com/questions/13654927/why-explicitly-delete-the-constructor-instead-of-making-it-private
+
 what is C-compatible.
 https://ccrma.stanford.edu/~jos/stkintro/Useful_commands_gdb.html
 https://ftp.gnu.org/old-gnu/Manuals/gdb/html_node/gdb_28.html
 https://superuser.com/questions/401182/how-can-i-create-a-dump-file-of-a-running-process-in-linux
-getstarted cmake  
+ 
 https://medium.com/@killianchateau/a-simple-sudoku-solver-in-c-f00fd2963c67
-how to create memory dump file in linux
 
 semaphore in c++ and python
 
 test if run a program which raise a signal in GDB, will it actually raise signals? verify by listening on another process. 
 if yes, debugging is safe, if no, it actually run and may impact other (write to file/sent data to network/db)
 
-Coredump C++
-
-Constructor and member initializer list
-Uniforminitialization
 https://stackoverflow.com/questions/45053275/can-static-local-variable-be-wrongly-optimized
 How g++ optimize variable
 How debug mode afect optimization mode
-https://stackoverflow.com/questions/45349025/why-is-nullptr-undeclared-in-c
-https://stackoverflow.com/questions/24433436/compile-error-nullptr-undeclared-identifier
+
 What is literal in C++ modern
 there are alternatives like scoped_array, shared_array and vector, you can use a shared_ptr to manage scope of an array (but after this I have no idea why I would want to
-ví dụ về performance advantage khi pass 1 variable nằm sẵn trên register, khi 2 dòng c cạnh nhau và value kết quả trước vẫn nằm trên register
-C++17 added a new filesystem library which provides portable filesystem access across all supporting compilers
-C++11's threading capabilities should be utilized over pthread or WinThreads. std::thread
-concurrency -> chạy đồng thời, không có nghĩa là chạy song mà có thể là được schedule theo round robin 
-parallel -> chạy real song song 
+
 statics are not always constructed and deconstructed as you would expect. This is particularly true in cross-platform environments?????????
-Heap Much slower in threaded environments, compare to stack.
+
 Mutex and mutable go together (M&M rule)
 For a member variable, mutex (or similar synchronization type) implies mutable: A member variable that is itself of a synchronization type, such as a mutex or a condition variable, naturally wants to be mutable, because you will want to use it in a non-const way (e.g., take a std::lock_guard<mutex>) inside concurrent const member functions.
 unwind the stack -> gaiir phóng stack -> unwind
 allocator in c++
-difference between delete and delete[]
 use scoped_array, as it has less overhead than shared_array
-be sure to implement a .clang-format file that specifies the style you expect. 
+
 While this cannot help with naming, it is particularly important for an open source project to maintain a consistent style.
 Note that you can cause integer underflow when performing some operations on unsigned values. For example:
 what is integer underflow?
@@ -520,10 +483,6 @@ The timer_create function is a POSIX function used in C and C++ to create a per-
 It is part of the <time.h> library and is commonly used in Linux-based systems. 
 time_t in <ctime>
 
-You can also use the new keyword to create dynamic arrays.
-Note: For arrays, use new[] and delete[]
-https://www.geeksforgeeks.org/cpp/types-of-constructors-in-cpp/
-
 # Make/build
     The GNU C Library (glibc) manual
     https://sourceware.org/glibc/manual/
@@ -536,7 +495,6 @@ https://www.geeksforgeeks.org/cpp/types-of-constructors-in-cpp/
     can a library is included without a visible header
     build link boost library, static or dinamic lib
     Nếu có dynamic lib thì nhiều app cùng chạy cùng dùng file binary đó thì có được, làm sao để share cái binary đó cho nhiều process.
-    what is the defaul C++ standard g++ run if I dont specify
     problems of static lib and dynamic lib. What happend if 2 people working with a library and one of them is crazy.
     investigate the use of libtool, in make file
 
@@ -648,22 +606,14 @@ vì sao indexing dùng B+ tree
 ￼kafka
 tipc
 
-nguyên tắc dry và solid
 what is the default stdin/stdout
 
 check ecimswmmethodtracer.hh
-#ifdef __cplusplus
-extern “c” { 
-#endif
-    … code ….
-#ifdef __cplusplus
-}
-#endif
+
 call C ++ from python and call puthon from c++
 ￼yocto
 etcd
 get process state in linux?
-
 
 struct pollfd : the data structure describing a polling request
 struct polls {
@@ -687,6 +637,7 @@ short int events
     https://peps.python.org/pep-0000/
     Game Programming Patterns by Robert Nystrom - https://gameprogrammingpatterns.com/
     https://cplusplus.com/
+    https://cplusplus.com/reference/
     https://en.cppreference.com/w/
     https://cppcon.org/
     https://guide.bash.academy/
