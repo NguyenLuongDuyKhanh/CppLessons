@@ -166,3 +166,49 @@ What is SRAM and compare to DRAM
 
 ## Study 53
 How stack grow in runtime?
+
+## Study 54
+In C++, can a class function without a constructor? Explain the explicit constructor and the default constructor. 
+
+## Study 55
+Why dereferencing null pointer cause segmentation fault in C/C++? Why nullptr is preferred over NULL in C++?
+
+## Study 56
+How system calls look like after compiling C++ program. Give me example of using pthread and asm code to create pthread.
+
+## Study 57
+What are debug symbols and how to deliver it seperately from binary?
+
+## Study 58
+List the usage of const in C++ and compare to that of C.
+
+## Study 59
+If I want to store a set of objects in C++, which of the following methods is most suitable:
+- Array of those objects' references
+- Array of those objects
+- Linked list of those objects
+
+## Study 60
+I have class A() {void aFunction();};
+What difference in order of constructor calls between: 
+A obj;
+A* obj;
+
+Anything wrong if:
+A* obj;
+obj->aFunction();
+
+## Study 61
+Explain static keyword in C variables and functions. Also teach me static vs extern.
+
+## Study 62
+What is "this" in C++, when must we use that keyword?
+
+## Study 63
+What are -l, -D, -W in gcc command? Teach me other common option with gcc/g++.
+
+## Study 64
+Give me example of using fds in C. What is poll() function.
+
+## Study 65
+What is POSIX timer. Give me example.

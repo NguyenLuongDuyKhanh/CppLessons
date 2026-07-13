@@ -32,7 +32,8 @@ int main() {
 
     */
     // Integer d = a + 1;
-
+    cin >> a;
+    
     cout << a << endl;
 
     return 0;

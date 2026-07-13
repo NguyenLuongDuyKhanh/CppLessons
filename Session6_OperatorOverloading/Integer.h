@@ -5,10 +5,12 @@ class Integer {
 private:
     
 public:
+    /* If m_pInt is private, we need to declare friend functions thereby those functions can access private attr */
     int *m_pInt;
     /* Constructor */
     Integer();
-    Integer(int);
+    //explicit Integer(int); // Using explicit with this parameterized constructor to avoid implicit call
+    Integer(int); 
     Integer(const Integer &object); // Copy constructor
     Integer(Integer && obj);        // Move constructor
 
@@ -19,10 +21,28 @@ public:
     Integer & operator ++();    // Pre-increment
     Integer operator ++(int);   // Post-increment
 
+    /* Dereference operator */
+    int& operator*();
+    
+    /* Pointer member access */
+    int operator->();
+
+    /* Address of */
+    int* operator&();
+
     /* Assignment operator */
     Integer & operator=(const Integer &a);  // Copy assignment operator
     Integer & operator=(Integer && obj);    // Move assignment operator
 
+    /* Friend */
+    friend std::istream & operator >>(istream &in, Integer &a);
+
+    /* Type conversion */
+    /* This helps to convert an Interger to primitive int, without this Example 3 will fails*/
+    operator int();
+    /* Adding explicit as below force user to call this conversion explicitly, to avoid implicitly call conversion */
+    // explicit operator int();
+    
     /* Destructor */
     ~Integer();
 };
@@ -42,3 +62,7 @@ Integer::Integer(const Integer &object) {
 Integer::~Integer() {
     delete m_pInt;
 }
+
+class Printer {
+
+};
