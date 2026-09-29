@@ -1,4 +1,4 @@
-## Study1
+## [Study1](Study1.md)
 How system calls look like after building C++ program. Give example of using pthread and ASM code to create pthread. Also example of Raw thread creation via inline asm.
 
 ## Study2
@@ -212,3 +212,21 @@ Give me example of using fds in C. What is poll() function.
 
 ## Study 65
 What is POSIX timer. Give me example.
+
+## Study 66
+What is custom deleter and allocator in C++. Show me some examples.
+
+## Study 67
+Show me some example where std::pmr is useful.
+
+## Study 68
+Why make_share and make_unique is preferred to create smart pointers and how to use those effectively in C++.
+
+## Study 69
+How to synchronize between processes? Where are flags/lock is stored? How to inspect memory space of a process.
+
+## Study 70
+Header library có ưu điểm gì, tại sao boost lại chọn dạng header library?
+
+## Study 71
+Teach me about  trivially copyable types and not  trivially copyable types in C++.
